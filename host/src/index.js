@@ -10,7 +10,12 @@ class Host {
     loadGuest() {
         import('guest/utils').then((guestUtils) => {
             this.guestUtils = guestUtils;
-            console.log('{ guestUtils }: ', {guestUtils});
+        }).then(() => {
+            const myUtils = this.getMyUtils();
+            const guestUtils = this.getGuestUtils();
+
+            // TODO: investigate why guestUtils here is "module=>module" but not just an object
+            console.log('{ myUtils, guestUtils }: ', { myUtils, guestUtils });
         });
     }
 

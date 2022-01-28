@@ -8,11 +8,5 @@
   },
   "scripts": {
     "start": "lerna run start --parallel"
-  },
-  "workspaces": {
-    "packages": [
-      "./host/*",
-      "./guest/*"
-    ]
   }
 }
