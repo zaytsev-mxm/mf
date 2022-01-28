@@ -1,7 +1,11 @@
-const path = require('path');
-const webpack = require('webpack');
+import path from 'path';
+import { fileURLToPath } from 'url';
+import webpack from 'webpack';
 
-module.exports = {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export default {
     mode: 'development',
     entry: './src/index.js',
     output: {

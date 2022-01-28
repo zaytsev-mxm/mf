@@ -1,4 +1,4 @@
-const myUtils = require('./utils');
+import myUtils from './utils.js';
 
 class Host {
     constructor() {
@@ -8,8 +8,7 @@ class Host {
     }
 
     loadGuest() {
-        require.ensure(['guest/utils'], (require) => {
-            const guestUtils = require('guest/utils');
+        import('guest/utils').then((guestUtils) => {
             this.guestUtils = guestUtils;
             console.log('{ guestUtils }: ', {guestUtils});
         });
@@ -34,4 +33,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 })
 
-module.exports = Host;
+export default Host;

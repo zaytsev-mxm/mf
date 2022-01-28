@@ -1,4 +1,4 @@
-const utils = require('./utils/utils');
+import utils from './utils/utils.js';
 
 class Guest {
     constructor() {
@@ -10,4 +10,4 @@ class Guest {
     }
 }
 
-module.exports = Guest;
+export default Guest;
