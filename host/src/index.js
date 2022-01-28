@@ -1,26 +1,26 @@
-import myUtils from './utils.js';
+import hostUtils from './utils-host.js';
 
 class Host {
     constructor() {
-        this.myUtils = myUtils;
+        this.hostUtils = hostUtils;
 
         // this.loadGuest();
     }
 
     loadGuest() {
-        import('guest/utils').then((guestUtils) => {
+        import('guest/guest-utils').then((guestUtils) => {
             this.guestUtils = guestUtils;
         }).then(() => {
-            const myUtils = this.getMyUtils();
-            const guestUtils = this.getGuestUtils();
-
             // TODO: investigate why guestUtils here is "module=>module" but not just an object
-            console.log('{ myUtils, guestUtils }: ', { myUtils, guestUtils });
+            console.log('{ hostUtils, guestUtils }: ', {
+                hostUtils: this.getHostUtils(),
+                guestUtils: this.getGuestUtils(),
+            });
         });
     }
 
-    getMyUtils() {
-        return this.myUtils;
+    getHostUtils() {
+        return this.hostUtils;
     }
 
     getGuestUtils() {

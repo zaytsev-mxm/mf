@@ -20,7 +20,7 @@ export default {
                 guest: 'guest@http://localhost:3012/js/remoteEntry.js',
             },
             exposes: {
-                './utils': './src/utils.js',
+                './host-utils': './src/utils-host.js',
             }
         }),
     ],
