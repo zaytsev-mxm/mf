@@ -1,4 +1,5 @@
 import hostUtils from './utils-host.js';
+import guestUtils from 'guest/guest-utils';
 
 class Host {
     constructor() {
@@ -8,15 +9,17 @@ class Host {
     }
 
     loadGuest() {
-        import('guest/guest-utils').then((guestUtils) => {
-            this.guestUtils = guestUtils;
-        }).then(() => {
-            // TODO: investigate why guestUtils here is "module=>module" but not just an object
-            console.log('{ hostUtils, guestUtils }: ', {
-                hostUtils: this.getHostUtils(),
-                guestUtils: this.getGuestUtils(),
-            });
-        });
+        // import('guest/guest-utils').then((guestUtils) => {
+        //     this.guestUtils = guestUtils;
+        // }).then(() => {
+        //     // TODO: investigate why guestUtils here is "module=>module" but not just an object
+        //     console.log('{ hostUtils, guestUtils }: ', {
+        //         hostUtils: this.getHostUtils(),
+        //         guestUtils: this.getGuestUtils(),
+        //     });
+        // });
+
+        this.guestUtils = guestUtils;
     }
 
     getHostUtils() {
