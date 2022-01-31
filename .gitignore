@@ -4,3 +4,4 @@
 node_modules
 /guest/dist
 /host/dist
+/common/dist
