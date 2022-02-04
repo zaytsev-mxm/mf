@@ -1,22 +1,16 @@
 import hostUtils from './utils-host.js';
-import guestUtils from 'guest/guest-utils';
-// const guestUtils = 42;
 
 class Host {
     constructor() {
         this.hostUtils = hostUtils;
-
-        // this.loadGuest();
     }
 
     loadGuest() {
-        // import('guest/guest-utils').then((guestUtils) => {
-        //     this.guestUtils = guestUtils;
-        // }).then(() => {
-        //     this.showUtils();
-        // });
-
-        this.guestUtils = guestUtils;
+        import('guest/guest-utils').then((guestUtils) => {
+            this.guestUtils = guestUtils;
+        }).then(() => {
+            this.showUtils();
+        });
     }
 
     showUtils() {
@@ -40,7 +34,6 @@ window.onload = handleLoaded;
 
 function handleLoaded() {
     const host = new Host();
-    // console.log('{ host }: ', { host });
 
     const btnEl = document.querySelector('#btn');
     btnEl.addEventListener('click', function handleClick() {

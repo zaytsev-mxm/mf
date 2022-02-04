@@ -21,7 +21,12 @@ export default {
             },
             exposes: {
                 './host-utils': './src/utils-host.js',
-            }
+            },
+            shared: {
+                'is-number': {
+                    packageName: 'is-number',
+                },
+            },
         }),
     ],
     devtool: "inline-cheap-module-source-map"

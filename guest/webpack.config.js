@@ -22,6 +22,11 @@ export default {
             exposes: {
                 './guest-utils': './src/utils-guest.js',
             },
+            shared: {
+                'is-number': {
+                    packageName: 'is-number',
+                },
+            },
         }),
     ],
     devtool: "inline-cheap-module-source-map"
